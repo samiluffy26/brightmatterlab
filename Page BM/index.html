@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brightmatter Lab - Desarrollo de Software Innovador</title>
+    <meta name="description" content="Brightmatter Lab - Especialistas en desarrollo de software, páginas web, apps móviles y plataformas empresariales.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/logo/favicon.ico">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- EmailJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/emailjs-com/3.2.0/email.min.js"></script>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo -->
+                <div class="nav-logo">
+                    <img src="images/logo/brightmatter-logo.png" alt="Brightmatter Lab Logo" class="logo-img">
+                    <span class="logo-text">Brightmatter Lab</span>
+                </div>
+                
+                <!-- Navigation Menu -->
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/projects.html" class="nav-link">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/team.html" class="nav-link">Equipo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/services.html" class="nav-link">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/contact.html" class="nav-link">Contacto</a>
+                    </li>
+                </ul>
+                
+                <!-- Hamburger Menu -->
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section - Landing Page -->
+        <section id="home" class="hero">
+            <div class="hero-container">
+                <!-- Hero Content -->
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="title-line">Transformamos</span>
+                        <span class="title-line highlight">Ideas</span>
+                        <span class="title-line">en Soluciones</span>
+                        <span class="title-line highlight">Digitales</span>
+                    </h1>
+                    
+                    <p class="hero-description">
+                        Somos Brightmatter Lab, especialistas en desarrollo de software innovador. 
+                        Creamos páginas web, aplicaciones móviles, plataformas empresariales y 
+                        soluciones digitales que impulsan el crecimiento de tu negocio.
+                    </p>
+                    
+                    <div class="hero-buttons">
+                        <a href="pages/projects.html" class="btn btn-primary">
+                            <i class="fas fa-rocket"></i>
+                            Ver Proyectos
+                        </a>
+                        <a href="pages/contact.html" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i>
+                            Contactanos
+                        </a>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">8+</span>
+                            <span class="stat-label">Proyectos Completados</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">7</span>
+                            <span class="stat-label">Profesionales</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">1</span>
+                            <span class="stat-label">Año de Experiencia</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Animation -->
+                <div class="hero-animation">
+                    <div class="floating-elements">
+                        <!-- Elementos animados tecnológicos -->
+                        <div class="floating-element code-block">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="floating-element mobile-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="floating-element web-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="floating-element database-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="floating-element cloud-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <div class="floating-element api-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Figura geométrica central animada -->
+                    <div class="central-figure">
+                        <div class="tech-orb">
+                            <div class="orb-inner">
+                                <div class="pulse-ring"></div>
+                                <div class="pulse-ring delay-1"></div>
+                                <div class="pulse-ring delay-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Partículas de fondo -->
+                    <div class="particles" id="particles"></div>
+                </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator">
+                <div class="scroll-arrow">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <span>Descubre más</span>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Sobre Brightmatter Lab</h2>
+                    <p class="section-subtitle">
+                        Innovación tecnológica que impulsa tu éxito
+                    </p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>¿Quiénes Somos?</h3>
+                        <p>
+                            Somos un equipo de desarrolladores apasionados por la tecnología y la innovación. 
+                            En Brightmatter Lab, nos especializamos en crear soluciones digitales personalizadas 
+                            que transforman la manera en que las empresas operan y crecen en el mundo digital.
+                        </p>
+                        
+                        <h3>Nuestra Misión</h3>
+                        <p>
+                            Transformar ideas innovadoras en soluciones digitales robustas y escalables que 
+                            impulsen el crecimiento empresarial y mejoren la experiencia del usuario.
+                        </p>
+                    </div>
+                    
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h4>Desarrollo Web</h4>
+                            <p>Páginas web modernas y responsivas</p>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h4>Apps Móviles</h4>
+                            <p>Aplicaciones nativas y multiplataforma</p>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h4>Plataformas Empresariales</h4>
+                            <p>Sistemas internos y de gestión</p>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h4>Plataformas Educativas</h4>
+                            <p>Soluciones para instituciones educativas</p>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <h4>E-commerce</h4>
+                            <p>Tiendas online completas y funcionales</p>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h4>Mantenimiento</h4>
+                            <p>Resolución de bugs y mejoras</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Access Section -->
+        <section class="quick-access">
+            <div class="container">
+                <h2 class="section-title">Explora Brightmatter Lab</h2>
+                
+                <div class="quick-access-grid">
+                    <a href="pages/projects.html" class="access-card">
+                        <div class="card-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h3>Proyectos</h3>
+                        <p>Descubre nuestro portafolio de proyectos exitosos</p>
+                        <div class="card-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+                    
+                    <a href="pages/team.html" class="access-card">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Nuestro Equipo</h3>
+                        <p>Conoce a los profesionales detrás de cada proyecto</p>
+                        <div class="card-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+                    
+                    <a href="pages/services.html" class="access-card">
+                        <div class="card-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Servicios</h3>
+                        <p>Solicita una cotización para tu proyecto</p>
+                        <div class="card-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+                    
+                    <a href="pages/contact.html" class="access-card">
+                        <div class="card-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Contacto</h3>
+                        <p>Ponte en contacto con nosotros</p>
+                        <div class="card-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo/brightmatter-logo.png" alt="Brightmatter Lab" class="footer-logo-img">
+                        <span class="footer-logo-text">Brightmatter Lab</span>
+                    </div>
+                    <p class="footer-description">
+                        Transformamos ideas en soluciones digitales innovadoras.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/brightmatter.lab" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="mailto:brightmatter.lab@outlook.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://wa.me/18096572939" target="_blank" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Navegación</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="pages/projects.html">Proyectos</a></li>
+                        <li><a href="pages/team.html">Equipo</a></li>
+                        <li><a href="pages/services.html">Servicios</a></li>
+                        <li><a href="pages/contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Servicios</h4>
+                    <ul class="footer-links">
+                        <li>Desarrollo Web</li>
+                        <li>Apps Móviles</li>
+                        <li>Plataformas Empresariales</li>
+                        <li>E-commerce</li>
+                        <li>Mantenimiento</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <div class="contact-info">
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            brightmatter.lab@outlook.com
+                        </p>
+                        <p>
+                            <i class="fab fa-whatsapp"></i>
+                            +1 809-657-2939
+                        </p>
+                        <p>
+                            <i class="fab fa-instagram"></i>
+                            @brightmatter.lab
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Brightmatter Lab. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+/* =============================================================================
+   BRIGHTMATTER LAB - DISEÑO RESPONSIVO
+   Archivo: responsive.css
+   Descripción: Media queries y adaptaciones para diferentes dispositivos
+   Breakpoints: Mobile (320px-768px), Tablet (769px-1024px), Desktop (1025px+)
+============================================================================= */
+
+/* =============================================================================
+   DESKTOP LARGE (1400px+)
+============================================================================= */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .hero-title {
+        font-size: 4rem;
+    }
+    
+    .section-title {
+        font-size: 3rem;
+    }
+    
+    .hero-description {
+        font-size: 1.3rem;
+    }
+}
+
+/* =============================================================================
+   DESKTOP MEDIUM (1200px - 1399px)
+============================================================================= */
+@media (max-width: 1399px) {
+    .hero-container {
+        gap: 40px;
+    }
+    
+    .floating-element {
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
+    }
+    
+    .tech-orb {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .orb-inner {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+/* =============================================================================
+   TABLET LANDSCAPE (1025px - 1199px)
+============================================================================= */
+@media (max-width: 1199px) {
+    .container {
+        max-width: 1000px;
+        padding: 0 30px;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-content {
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 30px;
+    }
+    
+    .nav-menu {
+        gap: 25px;
+    }
+}
+
+/* =============================================================================
+   TABLET PORTRAIT (769px - 1024px)
+============================================================================= */
+@media (max-width: 1024px) {
+    :root {
+        --section-padding: 60px 0;
+    }
+    
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+        min-height: 70vh;
+    }
+    
+    .hero-animation {
+        order: -1;
+        height: 350px;
+    }
+}
