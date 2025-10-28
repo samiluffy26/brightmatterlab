@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Overview</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+        .profile-pic {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: white;
+            overflow: hidden;
+        }
+
+        .notification-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .notification-icon:hover {
+            background: rgba(255, 255, 255, 0.35);
+        }
+
+        .content-wrapper {
+            display: flex;
+            gap: 30px;
+        }
+
+        .chart-section {
+            flex: 1;
+            animation: slideInLeft 0.6s ease-out;
+        }
+
+        .graphic-button {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .graphic-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
+        }
+
+        .chart-container {
+            background: rgba(30, 30, 45, 0.95);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            animation: fadeInScale 0.6s ease-out;
+        }
+
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .chart-header h2 {
+            color: white;
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        .dropdown {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chart {
+            position: relative;
+            height: 350px;
+        }
+
+        .chart-note {
+            text-align: center;
+            margin-top: 20px;
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .requests-section {
+            width: 350px;
+            animation: slideInRight 0.6s ease-out;
+        }
+
+        .requests-container {
+            background: rgba(30, 30, 45, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            animation: fadeInScale 0.6s ease-out 0.2s backwards;
+        }
+
+        .requests-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .requests-header h2 {
+            color: white;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .requests-header p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+        }
+
+        .menu-dots {
+            color: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        .request-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .request-item:hover {
+            transform: translateX(5px);
+        }
+
+        .request-item:last-child {
+            border-bottom: none;
+        }
+
+        .request-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+
+        .request-info {
+            flex: 1;
+        }
+
+        .request-name {
+            color: white;
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+
+        .request-type {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .checkmark {
+            color: #10b981;
+            font-size: 12px;
+        }
+
+        .see-all {
+            text-align: center;
+            margin-top: 20px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .bottom-menu {
+            margin-top: auto;
+        }
+
+        canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="stars" id="stars"></div>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">BRIGHT<br>MATTER</div>
+            
+            <a href="dashboard.html" style="text-decoration: none;">
+    <div class="menu-item " data-page="dashboard">
+        <svg class="menu-icon" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="3" y="3" width="7" height="7" rx="1"/>
+            <rect x="14" y="3" width="7" height="7" rx="1"/>
+            <rect x="3" y="14" width="7" height="7" rx="1"/>
+            <rect x="14" y="14" width="7" height="7" rx="1"/>
+        </svg>
+        Dashboard
+    </div>
+</a>
+            
+            <a href="requests.html" style="text-decoration: none;">
+    <div class="menu-item" data-page="requests">
+        <svg class="menu-icon" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="3" y="6" width="18" height="3" rx="1"/>
+            <rect x="3" y="11" width="18" height="3" rx="1"/>
+            <rect x="3" y="16" width="18" height="3" rx="1"/>
+        </svg>
+        Requests
+    </div>
+</a>
+            
+            <a href="services.html" style="text-decoration: none;">
+    <div class="menu-item" data-page="services">
+        <svg class="menu-icon" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+            <line x1="3" y1="9" x2="21" y2="9" stroke="currentColor" stroke-width="2"/>
+            <line x1="9" y1="3" x2="9" y2="21" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        Services
+    </div>
+</a>
+
+            <div class="bottom-menu">
+                <div class="menu-item">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <circle cx="12" cy="8" r="4"/>
+                        <path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/>
+                    </svg>
+                    Profile
+                </div>
+                
+                <div class="menu-item">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/>
+                        <polyline points="16 17 21 12 16 7"/>
+                        <line x1="21" y1="12" x2="9" y2="12"/>
+                    </svg>
+                    Logout
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="header">
+                <div class="header-top">
+                    <div>
+                        <h1>Dashboard Overview</h1>
+                        <p>Track your sales, revenue, and growth metrics in real time.</p>
+                    </div>
+                    <div class="header-right">
+                        <div class="profile-pic">
+                            <svg width="55" height="55" viewBox="0 0 55 55">
+                                <rect width="55" height="55" fill="#e5e7eb"/>
+                                <circle cx="27.5" cy="20" r="8" fill="#9ca3af"/>
+                                <path d="M10 45c0-8 7-12 17.5-12S45 37 45 45" fill="#9ca3af"/>
+                            </svg>
+                        </div>
+                        <div class="notification-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                                <path d="M18 8c0-3.3-2.7-6-6-6S6 4.7 6 8c0 4.5-2 6-2 6h16s-2-1.5-2-6z"/>
+                                <path d="M13.73 21c-.3.5-.8.9-1.4 1-.6.1-1.3-.1-1.7-.6-.2-.2-.3-.5-.4-.8"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-wrapper">
+                <div class="chart-section">
+                    <button class="graphic-button">Graphic table</button>
+                    
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h2>Page visits</h2>
+                            <button class="dropdown">
+                                Monthly Reports ▼
+                            </button>
+                        </div>
+                        
+                        <div class="chart">
+                            <canvas id="myChart"></canvas>
+                        </div>
+                        
+                        <div style="text-align: center;">
+                            <span class="chart-note">Highest percentage of visits: Week 4</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="requests-section">
+                    <div class="requests-container">
+                        <div class="requests-header">
+                            <div>
+                                <h2>Request</h2>
+                                <p>Recent requests</p>
+                            </div>
+                            <div class="menu-dots">⋮</div>
+                        </div>
+
+                        <div class="request-item">
+                            <div class="request-icon">💼</div>
+                            <div class="request-info">
+                                <div class="request-name">Samuel Guance</div>
+                                <div class="request-type">
+                                    <span class="checkmark">✓</span>
+                                    E-commerce
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="request-item">
+                            <div class="request-icon">🏢</div>
+                            <div class="request-info">
+                                <div class="request-name">Cesar Gil</div>
+                                <div class="request-type">
+                                    <span class="checkmark">✓</span>
+                                    Bussiness Page
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="request-item">
+                            <div class="request-icon">💼</div>
+                            <div class="request-info">
+                                <div class="request-name">Leonardo Gomez</div>
+                                <div class="request-type">
+                                    <span class="checkmark">✓</span>
+                                    Network administration
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="request-item">
+                            <div class="request-icon">💼</div>
+                            <div class="request-info">
+                                <div class="request-name">Alanna Ferreras</div>
+                                <div class="request-type">
+                                    <span class="checkmark">✓</span>
+                                    Maintenance
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="see-all">See All ▼</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script>
+        // Crear estrellas
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 2 + 1;
+            star.style.width = size + 'px';
+            star.style.height = size + 'px';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.opacity = Math.random() * 0.5 + 0.3;
+            starsContainer.appendChild(star);
+        }
+
+        // Gráfico
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient.addColorStop(0, 'rgba(168, 85, 247, 0.4)');
+        gradient.addColorStop(1, 'rgba(168, 85, 247, 0)');
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                datasets: [{
+                    data: [50, 200, 100, 300],
+                    borderColor: '#a855f7',
+                    backgroundColor: gradient,
+                    borderWidth: 3,
+                    pointBackgroundColor: '#a855f7',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2,
+                    pointRadius: 6,
+                    pointHoverRadius: 8,
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 300,
+                        ticks: {
+                            stepSize: 50,
+                            color: 'rgba(255, 255, 255, 0.6)',
+                            font: {
+                                size: 12
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)',
+                            drawBorder: false
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: 'rgba(255, 255, 255, 0.6)',
+                            font: {
+                                size: 12
+                            }
+                        },
+                        grid: {
+                            display: false,
+                            drawBorder: false
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+    <script src="index.js"></script>
+</body>
+</html>

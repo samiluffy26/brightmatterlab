@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requests - Job Applications</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="requests.css">
+    <style>
+        
+        .profile-pic {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: white;
+            overflow: hidden;
+        }
+
+        .notification-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .notification-icon:hover {
+            background: rgba(255, 255, 255, 0.35);
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #ef4444;
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #7c3aed;
+        }
+
+        .content-area {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: rgba(30, 30, 45, 0.95);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            animation: slideUp 0.6s ease-out backwards;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:nth-child(1) { animation-delay: 0.1s; }
+        .stat-card:nth-child(2) { animation-delay: 0.2s; }
+        .stat-card:nth-child(3) { animation-delay: 0.3s; }
+        .stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(124, 58, 237, 0.4);
+        }
+
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .stat-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .filters-bar {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            animation: slideDown 0.6s ease-out 0.3s backwards;
+        }
+
+        .filter-btn {
+            padding: 12px 24px;
+            border-radius: 50px;
+            border: 2px solid rgba(124, 58, 237, 0.5);
+            background: rgba(30, 30, 45, 0.7);
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            border-color: transparent;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .search-box {
+            flex: 1;
+            max-width: 400px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px 12px 45px;
+            border-radius: 50px;
+            border: 2px solid rgba(124, 58, 237, 0.5);
+            background: rgba(30, 30, 45, 0.7);
+            color: white;
+            font-size: 14px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .search-box input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #a855f7;
+            background: rgba(30, 30, 45, 0.9);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .requests-list {
+            background: rgba(30, 30, 45, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            animation: fadeInScale 0.6s ease-out 0.5s backwards;
+        }
+
+        .request-card {
+            background: rgba(50, 50, 70, 0.5);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .request-card:hover {
+            transform: translateX(10px);
+            background: rgba(60, 60, 80, 0.7);
+            border-color: rgba(124, 58, 237, 0.5);
+            box-shadow: 0 8px 30px rgba(124, 58, 237, 0.3);
+        }
+
+        .request-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .request-info {
+            flex: 1;
+        }
+
+        .request-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .request-position {
+            font-size: 14px;
+            color: #a855f7;
+            font-weight: 600;
+        }
+
+        .request-status {
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status-pending {
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+        }
+
+        .status-review {
+            background: rgba(59, 130, 246, 0.2);
+            color: #3b82f6;
+        }
+
+        .status-approved {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+        }
+
+        .request-details {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+
+        .detail-icon {
+            color: #a855f7;
+        }
+
+        .skills-container {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .skill-tag {
+            padding: 6px 14px;
+            background: rgba(124, 58, 237, 0.3);
+            border-radius: 50px;
+            font-size: 12px;
+            color: white;
+            border: 1px solid rgba(124, 58, 237, 0.5);
+        }
+
+        .request-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .action-btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: 12px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .btn-view {
+            background: rgba(124, 58, 237, 0.2);
+            color: #a855f7;
+            border: 2px solid rgba(124, 58, 237, 0.5);
+        }
+
+        .btn-view:hover {
+            background: rgba(124, 58, 237, 0.3);
+            transform: scale(1.05);
+        }
+
+        .btn-approve {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+        }
+
+        .btn-approve:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-reject {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+            border: 2px solid rgba(239, 68, 68, 0.5);
+        }
+
+        .btn-reject:hover {
+            background: rgba(239, 68, 68, 0.3);
+            transform: scale(1.05);
+        }
+
+        .bottom-menu {
+            margin-top: auto;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="stars" id="stars"></div>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">BRIGHT<br>MATTER</div>
+            
+            <a href="dashboard.html" style="text-decoration: none;">
+    <div class="menu-item " data-page="dashboard">
+        <svg class="menu-icon" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="3" y="3" width="7" height="7" rx="1"/>
+            <rect x="14" y="3" width="7" height="7" rx="1"/>
+            <rect x="3" y="14" width="7" height="7" rx="1"/>
+            <rect x="14" y="14" width="7" height="7" rx="1"/>
+        </svg>
+        Dashboard
+    </div>
+</a>
+            
+            <a href="requests.html" style="text-decoration: none;">
+    <div class="menu-item" data-page="requests">
+        <svg class="menu-icon" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="3" y="6" width="18" height="3" rx="1"/>
+            <rect x="3" y="11" width="18" height="3" rx="1"/>
+            <rect x="3" y="16" width="18" height="3" rx="1"/>
+        </svg>
+        Requests
+    </div>
+</a>
+            
+            <a href="services.html" style="text-decoration: none;">
+    <div class="menu-item" data-page="services">
+        <svg class="menu-icon" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+            <line x1="3" y1="9" x2="21" y2="9" stroke="currentColor" stroke-width="2"/>
+            <line x1="9" y1="3" x2="9" y2="21" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        Services
+    </div>
+</a>
+
+            <div class="bottom-menu">
+                <div class="menu-item">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <circle cx="12" cy="8" r="4"/>
+                        <path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/>
+                    </svg>
+                    Profile
+                </div>
+                
+                <div class="menu-item">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/>
+                        <polyline points="16 17 21 12 16 7"/>
+                        <line x1="21" y1="12" x2="9" y2="12"/>
+                    </svg>
+                    Logout
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="header">
+                <div class="header-top">
+                    <div>
+                        <h1>Job Requests</h1>
+                        <p>Manage and review job applications for your development team.</p>
+                    </div>
+                    <div class="header-right">
+                        <div class="profile-pic">
+                            <svg width="55" height="55" viewBox="0 0 55 55">
+                                <rect width="55" height="55" fill="#e5e7eb"/>
+                                <circle cx="27.5" cy="20" r="8" fill="#9ca3af"/>
+                                <path d="M10 45c0-8 7-12 17.5-12S45 37 45 45" fill="#9ca3af"/>
+                            </svg>
+                        </div>
+                        <div class="notification-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                                <path d="M18 8c0-3.3-2.7-6-6-6S6 4.7 6 8c0 4.5-2 6-2 6h16s-2-1.5-2-6z"/>
+                                <path d="M13.73 21c-.3.5-.8.9-1.4 1-.6.1-1.3-.1-1.7-.6-.2-.2-.3-.5-.4-.8"/>
+                            </svg>
+                            <div class="notification-badge">8</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-area">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">📋</div>
+                        <div class="stat-value">24</div>
+                        <div class="stat-label">Total Applications</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⏳</div>
+                        <div class="stat-value">8</div>
+                        <div class="stat-label">Pending Review</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">👁️</div>
+                        <div class="stat-value">10</div>
+                        <div class="stat-label">In Review</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-value">6</div>
+                        <div class="stat-label">Approved</div>
+                    </div>
+                </div>
+
+                <div class="filters-bar">
+                    <button class="filter-btn active">All Applications</button>
+                    <button class="filter-btn">Pending</button>
+                    <button class="filter-btn">In Review</button>
+                    <button class="filter-btn">Approved</button>
+                    <button class="filter-btn">Rejected</button>
+                    <div class="search-box">
+                        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="m21 21-4.35-4.35"/>
+                        </svg>
+                        <input type="text" placeholder="Search by name or position...">
+                    </div>
+                </div>
+
+                <div class="requests-list" id="requestsList"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+<div class="modal-overlay" id="requestModal">
+    <div class="modal-content">
+        <div class="modal-close" onclick="closeModal()">×</div>
+        
+        <div class="modal-header">
+            <div class="modal-avatar" id="modalAvatar"></div>
+            <div class="modal-title-section">
+                <h2 id="modalName"></h2>
+                <div class="modal-position" id="modalPosition"></div>
+            </div>
+        </div>
+
+        <div class="modal-section">
+            <div class="modal-section-title">Contact Information</div>
+            <div class="modal-info-grid">
+                <div class="modal-info-item">
+                    <div class="modal-info-label">📧 Email</div>
+                    <div class="modal-info-value" id="modalEmail"></div>
+                </div>
+                <div class="modal-info-item">
+                    <div class="modal-info-label">💼 Experience</div>
+                    <div class="modal-info-value" id="modalExperience"></div>
+                </div>
+                <div class="modal-info-item">
+                    <div class="modal-info-label">📅 Application Date</div>
+                    <div class="modal-info-value" id="modalDate"></div>
+                </div>
+                <div class="modal-info-item">
+                    <div class="modal-info-label">📊 Status</div>
+                    <div class="modal-info-value" id="modalStatus"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-section">
+            <div class="modal-section-title">Skills & Technologies</div>
+            <div class="modal-skills" id="modalSkills"></div>
+        </div>
+
+        <div class="modal-section">
+            <div class="modal-section-title">Cover Letter</div>
+            <div class="modal-description" id="modalDescription"></div>
+        </div>
+
+        <div class="modal-actions" id="modalActions"></div>
+    </div>
+</div>
+
+    <script>
+        // Crear estrellas
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 2 + 1;
+            star.style.width = size + 'px';
+            star.style.height = size + 'px';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.opacity = Math.random() * 0.5 + 0.3;
+            starsContainer.appendChild(star);
+        }
+
+        // Datos de solicitudes con más información
+const requests = [
+    {
+        name: 'María González',
+        position: 'Frontend Developer',
+        status: 'pending',
+        email: 'maria.gonzalez@email.com',
+        experience: '5 years',
+        date: '2025-10-25',
+        skills: ['React', 'TypeScript', 'Tailwind CSS', 'Next.js'],
+        description: 'I am a passionate frontend developer with 5 years of experience building responsive and user-friendly web applications. I specialize in React and modern JavaScript frameworks, with a strong focus on performance optimization and accessibility. I would love to contribute to your team with my expertise in creating beautiful and functional user interfaces.'
+    },
+    {
+        name: 'Carlos Ramírez',
+        position: 'Backend Developer',
+        status: 'review',
+        email: 'carlos.ramirez@email.com',
+        experience: '7 years',
+        date: '2025-10-24',
+        skills: ['Node.js', 'Python', 'MongoDB', 'AWS'],
+        description: 'Experienced backend developer with expertise in building scalable server-side applications. Proficient in microservices architecture, database design, and cloud infrastructure. Looking forward to joining a dynamic team where I can leverage my skills to build robust systems.'
+    },
+    {
+        name: 'Ana Martínez',
+        position: 'Full Stack Developer',
+        status: 'approved',
+        email: 'ana.martinez@email.com',
+        experience: '4 years',
+        date: '2025-10-23',
+        skills: ['Vue.js', 'Laravel', 'MySQL', 'Docker'],
+        description: 'Full stack developer with a comprehensive understanding of both frontend and backend technologies. I enjoy working on challenging projects that require end-to-end development. My goal is to create seamless applications that deliver exceptional user experiences.'
+    },
+    {
+        name: 'Luis Fernández',
+        position: 'DevOps Engineer',
+        status: 'review',
+        email: 'luis.fernandez@email.com',
+        experience: '6 years',
+        date: '2025-10-22',
+        skills: ['Kubernetes', 'Jenkins', 'Terraform', 'Azure'],
+        description: 'DevOps engineer specialized in automating deployment pipelines and managing cloud infrastructure. I have extensive experience with CI/CD practices and container orchestration. Excited to help your team optimize their development workflow.'
+    },
+    {
+        name: 'Isabella Torres',
+        position: 'UI/UX Designer',
+        status: 'pending',
+        email: 'isabella.torres@email.com',
+        experience: '3 years',
+        date: '2025-10-21',
+        skills: ['Figma', 'Adobe XD', 'Prototyping', 'User Research'],
+        description: 'Creative UI/UX designer passionate about crafting intuitive and visually appealing interfaces. I combine user research with design thinking to create products that users love. Looking to bring my design expertise to an innovative team.'
+    },
+    {
+        name: 'Diego Morales',
+        position: 'Mobile Developer',
+        status: 'review',
+        email: 'diego.morales@email.com',
+        experience: '5 years',
+        date: '2025-10-20',
+        skills: ['React Native', 'Flutter', 'iOS', 'Android'],
+        description: 'Mobile developer with experience in building cross-platform applications. Skilled in native and hybrid development, with a focus on creating smooth and performant mobile experiences. Ready to develop amazing mobile solutions for your users.'
+    },
+    {
+        name: 'Sofía Jiménez',
+        position: 'Data Scientist',
+        status: 'approved',
+        email: 'sofia.jimenez@email.com',
+        experience: '4 years',
+        date: '2025-10-19',
+        skills: ['Python', 'TensorFlow', 'SQL', 'Power BI'],
+        description: 'Data scientist with strong analytical skills and experience in machine learning. I specialize in extracting insights from complex datasets and building predictive models. Eager to apply data-driven solutions to solve business challenges.'
+    },
+    {
+        name: 'Miguel Ángel Ruiz',
+        position: 'Frontend Developer',
+        status: 'pending',
+        email: 'miguel.ruiz@email.com',
+        experience: '2 years',
+        date: '2025-10-18',
+        skills: ['Angular', 'JavaScript', 'SASS', 'Git'],
+        description: 'Junior frontend developer eager to grow and learn. I have solid foundations in web development and I am constantly improving my skills. I am enthusiastic about joining a team where I can contribute and develop professionally.'
+    }
+];
+
+function getStatusClass(status) {
+    if (status === 'pending') return 'status-pending';
+    if (status === 'review') return 'status-review';
+    if (status === 'approved') return 'status-approved';
+}
+
+function getStatusText(status) {
+    if (status === 'pending') return 'Pending';
+    if (status === 'review') return 'In Review';
+    if (status === 'approved') return 'Approved';
+}
+
+function getInitials(name) {
+    return name.split(' ').map(n => n[0]).join('');
+}
+
+function openModal(index) {
+    const req = requests[index];
+    const modal = document.getElementById('requestModal');
+    
+    // Llenar información del modal
+    document.getElementById('modalAvatar').textContent = getInitials(req.name);
+    document.getElementById('modalName').textContent = req.name;
+    document.getElementById('modalPosition').textContent = req.position;
+    document.getElementById('modalEmail').textContent = req.email;
+    document.getElementById('modalExperience').textContent = req.experience;
+    document.getElementById('modalDate').textContent = req.date;
+    document.getElementById('modalStatus').textContent = getStatusText(req.status);
+    document.getElementById('modalDescription').textContent = req.description;
+    
+    // Llenar skills
+    const skillsContainer = document.getElementById('modalSkills');
+    skillsContainer.innerHTML = req.skills.map(skill => 
+        `<div class="modal-skill">${skill}</div>`
+    ).join('');
+    
+    // Botones de acción según el estado
+    const actionsContainer = document.getElementById('modalActions');
+    if (req.status === 'approved') {
+        actionsContainer.innerHTML = `
+            <button class="modal-btn modal-btn-contact" onclick="contactApplicant('${req.email}')">
+                💬 Contact Applicant
+            </button>
+        `;
+    } else {
+        actionsContainer.innerHTML = `
+            <button class="modal-btn modal-btn-approve" onclick="approveRequest(${index})">
+                ✓ Approve Application
+            </button>
+            <button class="modal-btn modal-btn-reject" onclick="rejectRequest(${index})">
+                ✗ Reject Application
+            </button>
+        `;
+    }
+    
+    // Mostrar modal
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    const modal = document.getElementById('requestModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+function approveRequest(index) {
+    requests[index].status = 'approved';
+    closeModal();
+    renderRequests();
+    alert('Application approved successfully!');
+}
+
+function rejectRequest(index) {
+    if (confirm('Are you sure you want to reject this application?')) {
+        requests.splice(index, 1);
+        closeModal();
+        renderRequests();
+        alert('Application rejected.');
+    }
+}
+
+function contactApplicant(email) {
+    window.location.href = `mailto:${email}`;
+}
+
+// Cerrar modal al hacer clic fuera
+document.addEventListener('click', function(e) {
+    const modal = document.getElementById('requestModal');
+    if (e.target === modal) {
+        closeModal();
+    }
+});
+
+// Cerrar modal con tecla ESC
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
+
+function renderRequests() {
+    const container = document.getElementById('requestsList');
+    container.innerHTML = requests.map((req, index) => `
+        <div class="request-card">
+            <div class="request-header">
+                <div class="avatar">${getInitials(req.name)}</div>
+                <div class="request-info">
+                    <div class="request-name">${req.name}</div>
+                    <div class="request-position">${req.position}</div>
+                </div>
+                <div class="request-status ${getStatusClass(req.status)}">
+                    ${getStatusText(req.status)}
+                </div>
+            </div>
+            
+            <div class="request-details">
+                <div class="detail-item">
+                    <span class="detail-icon">📧</span>
+                    ${req.email}
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">💼</span>
+                    ${req.experience} experience
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">📅</span>
+                    ${req.date}
+                </div>
+            </div>
+
+            <div class="skills-container">
+                ${req.skills.map(skill => `<div class="skill-tag">${skill}</div>`).join('')}
+            </div>
+
+            <div class="request-actions">
+                <button class="action-btn btn-view" onclick="openModal(${index})">📄 View Details</button>
+                ${req.status !== 'approved' ? `
+                    <button class="action-btn btn-approve" onclick="approveRequest(${index})">✓ Approve</button>
+                    <button class="action-btn btn-reject" onclick="rejectRequest(${index})">✗ Reject</button>
+                ` : '<button class="action-btn btn-view" onclick="contactApplicant(\'' + req.email + '\')">💬 Contact</button>'}
+            </div>
+        </div>
+    `).join('');
+}
+
+renderRequests();
+
+
+        // Filtros
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Búsqueda
+        document.querySelector('.search-box input').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            document.querySelectorAll('.request-card').forEach(card => {
+                const text = card.textContent.toLowerCase();
+                card.style.display = text.includes(searchTerm) ? 'block' : 'none';
+            });
+        });
+    </script>
+    <script src="index.js"></script>
+</body>
+</html>
