@@ -1,0 +1,352 @@
+.profile-pic {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: white;
+            overflow: hidden;
+        }
+
+        .notification-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .notification-icon:hover {
+            background: rgba(255, 255, 255, 0.35);
+        }
+
+        .content-wrapper {
+            display: flex;
+            gap: 30px;
+        }
+
+        .chart-section {
+            flex: 1;
+            animation: slideInLeft 0.6s ease-out;
+        }
+
+        .graphic-button {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .graphic-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
+        }
+
+        .chart-container {
+            background: rgba(30, 30, 45, 0.95);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            animation: fadeInScale 0.6s ease-out;
+        }
+
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .chart-header h2 {
+            color: white;
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        .dropdown {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chart {
+            position: relative;
+            height: 350px;
+        }
+
+        .chart-note {
+            text-align: center;
+            margin-top: 20px;
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .requests-section {
+            width: 350px;
+            animation: slideInRight 0.6s ease-out;
+        }
+
+        .requests-container {
+            background: rgba(30, 30, 45, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            animation: fadeInScale 0.6s ease-out 0.2s backwards;
+        }
+
+        .requests-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .requests-header h2 {
+            color: white;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .requests-header p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+        }
+
+        .menu-dots {
+            color: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        .request-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .request-item:hover {
+            transform: translateX(5px);
+        }
+
+        .request-item:last-child {
+            border-bottom: none;
+        }
+
+        .request-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+
+        .request-info {
+            flex: 1;
+        }
+
+        .request-name {
+            color: white;
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+
+        .request-type {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .checkmark {
+            color: #10b981;
+            font-size: 12px;
+        }
+
+        .see-all {
+            text-align: center;
+            margin-top: 20px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .bottom-menu {
+            margin-top: auto;
+        }
+
+        canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* ========================================
+           ANIMACIONES Y TRANSICIONES
+           ======================================== */
+
+        /* Animaciones de página */
+        .page-container {
+            animation: pageEnter 0.6s ease-out;
+        }
+
+        .page-enter {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .page-enter-active {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        /* Animaciones de scroll */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .animate-on-scroll.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Efectos de hover para cards */
+        .card-hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Loading states */
+        .loading .page-container {
+            opacity: 0;
+        }
+
+        .loaded .page-container {
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
+        }
+
+        /* Animación de entrada de página */
+        @keyframes pageEnter {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Efecto ripple para botones */
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* Animation wrapper */
+        .animation-wrapper.loading {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .animation-wrapper.ready {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+        }
+
+        /* Mejoras adicionales para animaciones más suaves */
+        .animate-on-scroll {
+            will-change: transform, opacity;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+        }
+
+        .animate-on-scroll.animate-in {
+            animation: smoothFadeIn 0.6s ease-out forwards;
+        }
+
+        @keyframes smoothFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) translateZ(0);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) translateZ(0);
+            }
+        }
