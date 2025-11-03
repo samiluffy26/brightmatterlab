@@ -1,0 +1,543 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Brightmatter Lab</title>
+    
+    <!-- Meta tags para SEO -->
+    <meta name="description" content="Ponte en contacto con Brightmatter Lab. Estamos listos para transformar tu idea en una solución digital exitosa">
+    <meta name="keywords" content="contacto, desarrollo software, consulta gratuita, Brightmatter Lab">
+    
+    <!-- Enlaces a CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
+    <link rel="stylesheet" href="../css/mobile-menu-fix.css">
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navegación Principal -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="nav-logo">
+                <a href="../index.html" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                    <img src="../images/logo/brightmatter-logo.png" alt="Brightmatter Lab Logo" class="logo-img">
+                    <span class="logo-text">Brightmatter Lab</span>
+                </a>
+            </div>
+            
+            <!-- Menu Desktop -->
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="projects.html" class="nav-link">Proyectos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="team.html" class="nav-link">Equipo</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link active">Contacto</a>
+                </li>
+            </ul>
+            
+            <!-- Elementos de la derecha -->
+            <div class="nav-right">
+                <!-- Botón Toggle Modo Oscuro -->
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Cambiar tema" title="Alternar entre modo claro y oscuro">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <!-- Menu Mobile Hamburger -->
+                <div class="nav-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header de Página -->
+    <header class="page-header">
+        <div class="container">
+            <div class="header-content">
+                
+                
+                <h1 class="page-title">Hablemos de tu Proyecto</h1>
+                <p class="page-description">
+                    ¿Tienes una idea brillante? Estamos aquí para ayudarte a convertirla en realidad. 
+                    Contáctanos y descubre cómo podemos impulsar tu negocio con tecnología de vanguardia.
+                </p>
+                
+                <!-- Quick Contact Stats -->
+                <div class="contact-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-clock"></i>
+                        <span class="stat-number">< 24h</span>
+                        <span class="stat-label">Tiempo de Respuesta</span>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-comments"></i>
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Consultas Respondidas</span>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-handshake"></i>
+                        <span class="stat-number">Gratis</span>
+                        <span class="stat-label">Consulta Inicial</span>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Información de Contacto -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-methods">
+                
+                <!-- WhatsApp -->
+                <div class="contact-method whatsapp" data-aos="fade-up" data-aos-delay="100">
+                    <div class="method-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="method-content">
+                        <h3>WhatsApp</h3>
+                        <p>Respuesta inmediata para consultas rápidas</p>
+                        <div class="method-details">
+                            <span class="contact-value">+1 809-657-2939</span>
+                            <span class="availability">Disponible 9AM - 6PM</span>
+                        </div>
+                        <a href="https://wa.me/18096572939" class="btn btn-success" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                            Escribir por WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="contact-method email" data-aos="fade-up" data-aos-delay="200">
+                    <div class="method-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="method-content">
+                        <h3>Email</h3>
+                        <p>Para consultas detalladas y propuestas formales</p>
+                        <div class="method-details">
+                            <span class="contact-value">brightmatter.lab@outlook.com</span>
+                            <span class="availability">Respuesta en 24 horas</span>
+                        </div>
+                        <a href="mailto:brightmatter.lab@outlook.com" class="btn btn-primary">
+                            <i class="fas fa-envelope"></i>
+                            Enviar Email
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Instagram -->
+                <div class="contact-method instagram" data-aos="fade-up" data-aos-delay="300">
+                    <div class="method-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="method-content">
+                        <h3>Instagram</h3>
+                        <p>Síguenos y mantente al día con nuestros proyectos</p>
+                        <div class="method-details">
+                            <span class="contact-value">@brightmatter.lab</span>
+                            <span class="availability">Contenido diario</span>
+                        </div>
+                        <a href="https://instagram.com/brightmatter.lab" class="btn btn-secondary" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                            Seguir en Instagram
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Contacto -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-info">
+                    <h2>Envíanos un Mensaje</h2>
+                    <p>Completa el formulario y te contactaremos lo antes posible para discutir tu proyecto en detalle.</p>
+                    
+                    <div class="form-benefits">
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Consulta gratuita de 30 minutos</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Propuesta personalizada sin compromiso</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Asesoramiento técnico especializado</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Tiempo de respuesta garantizado</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        
+                        <!-- Información Personal -->
+                        <div class="form-section">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName" class="form-label">Nombre *</label>
+                                    <input type="text" id="firstName" name="firstName" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName" class="form-label">Apellido *</label>
+                                    <input type="text" id="lastName" name="lastName" class="form-input" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">Correo Electrónico *</label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">Teléfono</label>
+                                    <input type="tel" id="phone" name="phone" class="form-input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="company" class="form-label">Empresa</label>
+                                    <input type="text" id="company" name="company" class="form-input">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Tipo de Proyecto -->
+                        <div class="form-section">
+                            <label class="form-label">¿Qué tipo de proyecto tienes en mente? *</label>
+                            <div class="project-types">
+                                <label class="project-type-card">
+                                    <input type="radio" name="projectType" value="website" required>
+                                    <div class="card-content">
+                                        <i class="fas fa-globe"></i>
+                                        <h4>Sitio Web</h4>
+                                        <p>Landing pages, sitios corporativos</p>
+                                    </div>
+                                </label>
+                                
+                                <label class="project-type-card">
+                                    <input type="radio" name="projectType" value="webapp" required>
+                                    <div class="card-content">
+                                        <i class="fas fa-laptop-code"></i>
+                                        <h4>Aplicación Web</h4>
+                                        <p>Sistemas complejos, dashboards</p>
+                                    </div>
+                                </label>
+                                
+                                <label class="project-type-card">
+                                    <input type="radio" name="projectType" value="mobile" required>
+                                    <div class="card-content">
+                                        <i class="fas fa-mobile-alt"></i>
+                                        <h4>App Móvil</h4>
+                                        <p>iOS, Android, híbridas</p>
+                                    </div>
+                                </label>
+                                
+                                <label class="project-type-card">
+                                    <input type="radio" name="projectType" value="maintenance" required>
+                                    <div class="card-content">
+                                        <i class="fas fa-tools"></i>
+                                        <h4>Mantenimiento</h4>
+                                        <p>Soporte, actualizaciones</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Presupuesto y Timeline -->
+                        <div class="form-section">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="budget" class="form-label">Presupuesto Aproximado</label>
+                                    <select id="budget" name="budget" class="form-input">
+                                        <option value="">Selecciona un rango</option>
+                                        <option value="under-500">Menos de $500</option>
+                                        <option value="500-1500">$500 - $1,500</option>
+                                        <option value="1500-3000">$1,500 - $3,000</option>
+                                        <option value="3000-5000">$3,000 - $5,000</option>
+                                        <option value="5000+">Más de $5,000</option>
+                                        <option value="flexible">Flexible</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="timeline" class="form-label">¿Cuándo necesitas el proyecto?</label>
+                                    <select id="timeline" name="timeline" class="form-input">
+                                        <option value="">Selecciona un plazo</option>
+                                        <option value="asap">Lo antes posible</option>
+                                        <option value="1-month">En 1 mes</option>
+                                        <option value="2-3-months">En 2-3 meses</option>
+                                        <option value="flexible">Flexible</option>
+                                        <option value="planning">Aún estoy planificando</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Mensaje -->
+                        <div class="form-section">
+                            <div class="form-group">
+                                <label for="message" class="form-label">Cuéntanos sobre tu proyecto *</label>
+                                <textarea id="message" name="message" rows="6" class="form-input" 
+                                          placeholder="Describe tu proyecto, objetivos, funcionalidades que necesitas, audiencia objetivo y cualquier detalle que consideres importante..." required></textarea>
+                            </div>
+                        </div>
+                        
+                        <!-- Botón de envío -->
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-large">
+                                <i class="fas fa-paper-plane"></i>
+                                Enviar Mensaje
+                            </button>
+                            <p class="response-time">
+                                <i class="fas fa-clock"></i>
+                                Te responderemos en menos de 24 horas
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ubicación y Disponibilidad -->
+    <section class="location-section">
+        <div class="container">
+            <div class="location-content">
+                <div class="location-info" data-aos="fade-right">
+                    <h2>Nuestra Ubicación</h2>
+                    <p>Aunque trabajamos de forma remota con clientes de todo el mundo, nuestra base de operaciones está en República Dominicana.</p>
+                    
+                    <div class="location-details">
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="detail-content">
+                                <strong>Ubicación</strong>
+                                <span>Santo Domingo, República Dominicana</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <div class="detail-content">
+                                <strong>Horario de Atención</strong>
+                                <span>Lunes a Viernes: 9:00 AM - 6:00 PM (GMT-4)</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-globe-americas"></i>
+                            <div class="detail-content">
+                                <strong>Cobertura</strong>
+                                <span>Trabajamos con clientes de todo el mundo</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-language"></i>
+                            <div class="detail-content">
+                                <strong>Idiomas</strong>
+                                <span>Español e Inglés fluido</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="availability-card" data-aos="fade-left">
+                    <h3>Estado del Equipo</h3>
+                    <div class="team-status">
+                        <div class="status-indicator online">
+                            <div class="status-dot"></div>
+                            <span>Equipo disponible</span>
+                        </div>
+                        <p>Actualmente tenemos disponibilidad para nuevos proyectos. ¡Perfecto momento para contactarnos!</p>
+                    </div>
+                    
+                    <div class="next-available">
+                        <h4>Próximos Proyectos</h4>
+                        <div class="availability-timeline">
+                            <div class="timeline-item available">
+                                <div class="timeline-date">Enero 2025</div>
+                                <div class="timeline-status">Disponible</div>
+                            </div>
+                            <div class="timeline-item limited">
+                                <div class="timeline-date">Febrero 2025</div>
+                                <div class="timeline-status">Cupos Limitados</div>
+                            </div>
+                            <div class="timeline-item busy">
+                                <div class="timeline-date">Marzo 2025</div>
+                                <div class="timeline-status">Lista de Espera</div>
+                            </div>
+                        </div>
+                        <small>*Los tiempos pueden variar según la complejidad del proyecto</small>
+                    </div>
+                    
+                    <a href="#contactForm" class="btn btn-secondary">
+                        <i class="fas fa-calendar-plus"></i>
+                        Reservar Consulta
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FAQ Rápido -->
+    <section class="quick-faq">
+        <div class="container">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            
+            <div class="quick-faq-grid">
+                <div class="faq-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="faq-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>¿Cuánto tardan en responder?</h3>
+                    <p>Respondemos todas las consultas en menos de 24 horas. Para WhatsApp, la respuesta suele ser inmediata durante horario laboral.</p>
+                </div>
+                
+                <div class="faq-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="faq-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>¿La consulta inicial tiene costo?</h3>
+                    <p>No, la consulta inicial es completamente gratuita. Te ayudamos a definir tu proyecto y te damos una propuesta sin compromiso.</p>
+                </div>
+                
+                <div class="faq-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="faq-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>¿Trabajen con cualquier presupuesto?</h3>
+                    <p>Sí, adaptamos nuestros servicios a diferentes presupuestos. Siempre encontramos la mejor solución para tus necesidades y posibilidades.</p>
+                </div>
+                
+                <div class="faq-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="faq-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>¿Atienden clientes internacionales?</h3>
+                    <p>Absolutamente. Trabajamos con clientes de todo el mundo y nos adaptamos a diferentes zonas horarias para una comunicación fluida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Final -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>¿Listo para Comenzar?</h2>
+                <p>No esperes más para dar vida a tu proyecto. Nuestro equipo está listo para ayudarte a alcanzar tus objetivos digitales.</p>
+                
+                <div class="cta-buttons">
+                    <a href="https://wa.me/18096572939" class="btn btn-success btn-large" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp Directo
+                    </a>
+                    <a href="mailto:brightmatter.lab@gmail.com" class="btn btn-primary btn-large">
+                        <i class="fas fa-envelope"></i>
+                        Enviar Email
+                    </a>
+                </div>
+                
+                <div class="cta-guarantee">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Respuesta garantizada en 24 horas o menos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="../images/logo/brightmatter-logo-white.png" alt="Brightmatter Lab">
+                        <h3>Brightmatter Lab</h3>
+                    </div>
+                    <p>Transformamos ideas en soluciones digitales profesionales que impulsan el crecimiento de tu negocio.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Navegación</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="projects.html">Proyectos</a></li>
+                        <li><a href="team.html">Equipo</a></li>
+                        <li><a href="services.html">Servicios</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Servicios</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html#web-development">Desarrollo Web</a></li>
+                        <li><a href="services.html#mobile-apps">Apps Móviles</a></li>
+                        <li><a href="services.html#platforms">Plataformas</a></li>
+                        <li><a href="services.html#maintenance">Mantenimiento</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:brightmatter.lab@gmail.com">brightmatter.lab@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/18096572939">+1 809-657-2939</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-instagram"></i>
+                            <a href="https://instagram.com/brightmatter.lab">@brightmatter.lab</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Brightmatter Lab. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/form-handler.js"></script>
+</body>
+</html>
+                

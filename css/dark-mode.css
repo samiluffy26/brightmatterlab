@@ -1,0 +1,46 @@
+/* ========================================
+   BRIGHTMATTER LAB - MODO OSCURO
+   ========================================
+   
+   Estilos para el tema oscuro de la aplicación
+   ======================================== */
+
+/* === MODO OSCURO - NAVEGACIÓN DESKTOP === */
+@media screen and (min-width: 966px) {
+  [data-theme="dark"] .nav-menu {
+    background: transparent !important;
+    backdrop-filter: none !important;
+  }
+  
+  [data-theme="dark"] .nav-item {
+    background: transparent !important;
+  }
+  
+  [data-theme="dark"] .nav-link {
+    color: #ffffff !important;
+    background: transparent !important;
+  }
+  
+  [data-theme="dark"] .nav-link:hover,
+  [data-theme="dark"] .nav-link.active {
+    color: var(--primary-color) !important;
+    background: transparent !important;
+  }
+}
+
+/* === MODO OSCURO - MENÚ MÓVIL === */
+@media screen and (max-width: 965px) {
+  [data-theme="dark"] .nav-menu.active {
+    background: rgba(20, 20, 20, 0.98) !important;
+  }
+  
+  [data-theme="dark"] .nav-link {
+    color: #ffffff !important;
+    background: none !important;
+  }
+  
+  [data-theme="dark"] .nav-link:hover {
+    background: rgba(224, 123, 223, 0.15) !important;
+    color: #ffffff !important;
+  }
+}

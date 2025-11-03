@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos - Brightmatter Lab</title>
+    
+    <!-- Meta tags para SEO -->
+    <meta name="description" content="Descubre nuestros proyectos de desarrollo de software, páginas web y aplicaciones móviles realizados por Brightmatter Lab">
+    <meta name="keywords" content="proyectos, portafolio, desarrollo software, páginas web, apps móviles">
+    
+    <!-- Enlaces a CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/projects.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
+    <link rel="stylesheet" href="../css/mobile-menu-fix.css">
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navegación Principal -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="nav-logo">
+                <a href="../index.html" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                    <img src="../images/logo/brightmatter-logo.png" alt="Brightmatter Lab Logo" class="logo-img">
+                    <span class="logo-text">Brightmatter Lab</span>
+                </a>
+            </div>
+            
+            <!-- Menu Desktop -->
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="projects.html" class="nav-link active">Proyectos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="team.html" class="nav-link">Equipo</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contacto</a>
+                </li>
+            </ul>
+            
+            <!-- Elementos de la derecha -->
+            <div class="nav-right">
+                <!-- Botón Toggle Modo Oscuro -->
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Cambiar tema" title="Alternar entre modo claro y oscuro">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <!-- Menu Mobile Hamburger -->
+                <div class="nav-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header de Página -->
+    <header class="page-header">
+        <div class="container">
+            <div class="header-content">
+                
+                
+                <h1 class="page-title">Nuestros Proyectos</h1>
+                <p class="page-description">
+                    Descubre las soluciones digitales que hemos desarrollado para nuestros clientes. 
+                    Cada proyecto refleja nuestro compromiso con la excelencia y la innovación tecnológica.
+                </p>
+                
+                <!-- Estadísticas -->
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="+10" data-duration="2000">+10</span>
+                        <span class="stat-label">Proyectos Completados</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="100" data-duration="2000">100</span>
+                        <span class="stat-label">% Satisfacción</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="24" data-duration="2000">24</span>
+                        <span class="stat-label">Meses de Experiencia</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Filtros de Proyectos -->
+    <section class="projects-filters">
+        <div class="container">
+            <div class="filters-wrapper">
+                <h3>Filtrar por categoría:</h3>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">
+                        <i class="fas fa-th"></i>
+                        Todos
+                    </button>
+                    <button class="filter-btn" data-filter="web">
+                        <i class="fas fa-globe"></i>
+                        Páginas Web
+                    </button>
+                    <button class="filter-btn" data-filter="platform">
+                        <i class="fas fa-server"></i>
+                        Plataformas
+                    </button>
+                    <button class="filter-btn" data-filter="ecommerce">
+                        <i class="fas fa-shopping-cart"></i>
+                        E-commerce
+                    </button>
+                    <button class="filter-btn" data-filter="education">
+                        <i class="fas fa-graduation-cap"></i>
+                        Educación
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos Grid -->
+    <section class="projects-showcase">
+        <div class="container">
+            <div class="projects-grid">
+                
+                <!-- Proyecto 1: E-commerce -->
+                <article class="project-item" data-category="ecommerce" data-aos="slide-right" data-aos-delay="100">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="../images/projects/1.jpg" alt="Plataforma E-commerce Avanzada">
+                            <div class="project-overlay">
+                                <div class="overlay-content">
+                                    <h3>E-commerce Avanzado</h3>
+                                    <p>Plataforma completa de comercio electrónico</p>
+                                    <div class="overlay-buttons">
+                                        <button class="btn btn-white" data-modal="project-1">
+                                            <i class="fas fa-eye"></i>
+                                            Ver Detalles
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-info">
+                            <div class="project-meta">
+                                <span class="project-date">
+                                    <i class="fas fa-calendar"></i>
+                                    Diciembre 2024
+                                </span>
+                                <span class="project-category">E-commerce</span>
+                            </div>
+                            
+                            <h3>E-commerce Avanzado</h3>
+                            <p>Plataforma completa con gestión de inventario, pagos integrados, panel administrativo y experiencia de usuario optimizada.</p>
+                            
+                            <div class="project-technologies">
+                                <span class="tech-tag">React.js</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">Stripe</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyecto 2: Plataforma Ministerio Educación -->
+                <article class="project-item" data-category="education platform" data-aos="slide-left" data-aos-delay="200">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="../images/projects/eDUvISOR/015bcc7a792f4a379a517b0f325aa14f.jpg" alt="Plataforma Ministerio de Educación - eDUvISOR">
+                            <div class="project-overlay">
+                                <div class="overlay-content">
+                                    <h3>Sistema Educativo Gubernamental</h3>
+                                    <p>Plataforma integral para el Ministerio</p>
+                                    <div class="overlay-buttons">
+                                        <button class="btn btn-white" data-modal="project-2">
+                                            <i class="fas fa-eye"></i>
+                                            Ver Detalles
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-info">
+                            <div class="project-meta">
+                                <span class="project-date">
+                                    <i class="fas fa-calendar"></i>
+                                    Noviembre 2024
+                                </span>
+                                <span class="project-category">Educación</span>
+                            </div>
+                            
+                            <h3>Plataforma Ministerio de Educación</h3>
+                            <p>Sistema integral para gestión académica y administrativa del sector educativo nacional con módulos especializados.</p>
+                            
+                            <div class="project-technologies">
+                                <span class="tech-tag">Angular</span>
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">Laravel</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyecto 3: Plataforma Inmobiliaria Sevane -->
+                <article class="project-item" data-category="real-estate fintech" data-aos="slide-right" data-aos-delay="300">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="../images/projects/Sevane/sevane.jpg" alt="Plataforma Inmobiliaria Sevane">
+                            <div class="project-overlay">
+                                <div class="overlay-content">
+                                    <h3>Sevane Real Estate</h3>
+                                    <p>Plataforma inmobiliaria y de préstamos</p>
+                                    <div class="overlay-buttons">
+                                        <button class="btn btn-white" data-modal="project-3">
+                                            <i class="fas fa-eye"></i>
+                                            Ver Detalles
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-info">
+                            <div class="project-meta">
+                                <span class="project-date">
+                                    <i class="fas fa-calendar"></i>
+                                    Septiembre 2024
+                                </span>
+                                <span class="project-category">Inmobiliaria</span>
+                            </div>
+                            
+                            <h3>Sevane - Plataforma Inmobiliaria</h3>
+                            <p>Plataforma integral inmobiliaria con sistema de préstamos, búsqueda avanzada de propiedades, calculadora hipotecaria y gestión completa de ventas.</p>
+                            
+                            <div class="project-technologies">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">Stripe</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- Proyecto 5: Portafolio 2 -->
+                <article class="project-item" data-category="web" data-aos="slide-right" data-aos-delay="500">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="../images/projects/portfolio.png" alt="Portafolio Empresarial">
+                            <div class="project-overlay">
+                                <div class="overlay-content">
+                                    <h3>Portafolio Empresarial</h3>
+                                    <p>Sitio web corporativo profesional</p>
+                                    <div class="overlay-buttons">
+                                        <button class="btn btn-white" data-modal="project-5">
+                                            <i class="fas fa-eye"></i>
+                                            Ver Detalles
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-info">
+                            <div class="project-meta">
+                                <span class="project-date">
+                                    <i class="fas fa-calendar"></i>
+                                    Agosto 2024
+                                </span>
+                                <span class="project-category">Web</span>
+                            </div>
+                            
+                            <h3>Portafolio Empresarial</h3>
+                            <p>Sitio web corporativo con diseño elegante, optimizado para SEO y completamente responsive.</p>
+                            
+                            <div class="project-technologies">
+                                <span class="tech-tag">Next.js</span>
+                                <span class="tech-tag">Tailwind CSS</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">Vercel</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyecto 6: Plataforma de Donaciones -->
+                <article class="project-item" data-category="platform web" data-aos="slide-left" data-aos-delay="600">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="../images/projects/Donate/42afd66bd5144452a23a0f1ae20b9e55.jpg" alt="Plataforma de Donaciones">
+                            <div class="project-overlay">
+                                <div class="overlay-content">
+                                    <h3>DonateConnect</h3>
+                                    <p>Plataforma digital de donaciones solidarias</p>
+                                    <div class="overlay-buttons">
+                                        <button class="btn btn-white" data-modal="project-6">
+                                            <i class="fas fa-eye"></i>
+                                            Ver Detalles
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-info">
+                            <div class="project-meta">
+                                <span class="project-date">
+                                    <i class="fas fa-calendar"></i>
+                                    Agosto 2024
+                                </span>
+                                <span class="project-category">Plataforma Social</span>
+                            </div>
+                            
+                            <h3>Plataforma de Donaciones</h3>
+                            <p>Sistema integral para gestionar campañas de donaciones, conectando donantes con organizaciones benéficas de manera segura y transparente.</p>
+                            
+                            <div class="project-technologies">
+                                <span class="tech-tag">Next.js</span>
+                                <span class="tech-tag">Stripe</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyecto 8: Plataforma Impuestos Internos -->
+                <article class="project-item" data-category="platform" data-aos="slide-left" data-aos-delay="800">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="../images/projects/Sistema-Facturacion/06966a62b225457d93b0f855d8a2bb14.jpg" alt="Sistema de Facturación Empresarial">
+                            <div class="project-overlay">
+                                <div class="overlay-content">
+                                    <h3>Sistema de Facturación</h3>
+                                    <p>Plataforma integral de facturación empresarial</p>
+                                    <div class="overlay-buttons">
+                                        <button class="btn btn-white" data-modal="project-8">
+                                            <i class="fas fa-eye"></i>
+                                            Ver Detalles
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-info">
+                            <div class="project-meta">
+                                <span class="project-date">
+                                    <i class="fas fa-calendar"></i>
+                                    Mayo 2024
+                                </span>
+                                <span class="project-category">Plataforma</span>
+                            </div>
+                            
+                            <h3>Sistema de Facturación Empresarial</h3>
+                            <p>Plataforma completa de facturación y gestión contable para empresas, con emisión automática de facturas, control de inventario y reportes financieros integrados.</p>
+                            
+                            <div class="project-technologies">
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">Laravel</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">Vue.js</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección CTA -->
+    <section class="projects-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>¿Tienes un proyecto en mente?</h2>
+                <p>Trabajemos juntos para convertir tu idea en una solución digital exitosa</p>
+                <div class="cta-buttons">
+                    <a href="services.html" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Iniciar Proyecto
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary">
+                        <i class="fas fa-comments"></i>
+                        Conversemos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modales de Proyectos -->
+    
+    <!-- Modal Proyecto 1: E-commerce -->
+    <div class="modal fade" id="project-modal-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>E-commerce Avanzado</h3>
+                    <button type="button" class="modal-close" data-dismiss="modal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="project-details">
+                        <div class="project-gallery">
+                            <div class="main-image">
+                                <img src="../images/projects/1.jpg" alt="E-commerce Dashboard">
+                            </div>
+                            <div class="thumbnail-gallery">
+                                <img src="../images/projects/2.jpg" alt="Vista Previa E-commerce" class="thumbnail active">
+                                <img src="../images/projects/3.jpg" alt="Dashboard Principal" class="thumbnail">
+                                <img src="../images/projects/4.jpg" alt="Carrito de Compras" class="thumbnail">
+                            </div>
+                        </div>
+                        
+                        <div class="project-description">
+                            <h4>Descripción del Proyecto</h4>
+                            <p>Plataforma completa de comercio electrónico desarrollada con las últimas tecnologías web. Incluye gestión de inventario en tiempo real, múltiples métodos de pago, panel administrativo avanzado y optimización para SEO.</p>
+                            
+                            <h4>Características Principales</h4>
+                            <ul>
+                                <li>Catálogo de productos con filtros avanzados</li>
+                                <li>Carrito de compras persistente</li>
+                                <li>Integración con pasarelas de pago (Stripe, PayPal)</li>
+                                <li>Panel administrativo para gestión</li>
+                                <li>Sistema de inventario automático</li>
+                                <li>Notificaciones por email</li>
+                                <li>Diseño responsive y optimizado</li>
+                            </ul>
+                            
+                            <h4>Tecnologías Utilizadas</h4>
+                            <div class="tech-stack">
+                                <span class="tech-item">React.js</span>
+                                <span class="tech-item">Node.js</span>
+                                <span class="tech-item">MongoDB</span>
+                                <span class="tech-item">Stripe API</span>
+                                <span class="tech-item">JWT</span>
+                                <span class="tech-item">Cloudinary</span>
+                            </div>
+                            
+                          <div class="project-stats">
+                                <div class="stat">
+                                    <span class="stat-value">6</span>
+                                    <span class="stat-label">Semanas</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">2</span>
+                                    <span class="stat-label">Desarrolladores</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">100%</span>
+                                    <span class="stat-label">Completado</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Proyecto 2: Ministerio Educación -->
+    <div class="modal fade" id="project-modal-2">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>eDUvISOR - Sistema Educativo Gubernamental</h3>
+                    <button type="button" class="modal-close" data-dismiss="modal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="project-details">
+                        <div class="project-gallery">
+                            <div class="main-image">
+                                <img src="../images/projects/eDUvISOR/015bcc7a792f4a379a517b0f325aa14f.jpg" alt="Dashboard Principal eDUvISOR">
+                            </div>
+                            <div class="thumbnail-gallery">
+                                <img src="../images/projects/eDUvISOR/015bcc7a792f4a379a517b0f325aa14f.jpg" alt="Dashboard Principal" class="thumbnail active">
+                                <img src="../images/projects/eDUvISOR/05b522e6d21e46bbb0e7ef11230365d9.jpg" alt="Sistema de Gestión Estudiantil" class="thumbnail">
+                                <img src="../images/projects/eDUvISOR/0c2d0aa95e004c08b647456cdb977e90.jpg" alt="Portal Docentes" class="thumbnail">
+                                <img src="../images/projects/eDUvISOR/1646054cc0a44b37acdea0aea000ae68.jpg" alt="Sistema de Calificaciones" class="thumbnail">
+                                <img src="../images/projects/eDUvISOR/17651ff4efe7431aa63f3a92390ec7a7.jpg" alt="Reportes Académicos" class="thumbnail">
+                                <img src="../images/projects/eDUvISOR/18bf61006fc24920bd3b62a99f465d1a.jpg" alt="Gestión de Centros Educativos" class="thumbnail">
+                                <img src="../images/projects/eDUvISOR/1b79bf8f5d5547248c96eb067f3b42cc.jpg" alt="Analytics Educativos" class="thumbnail">
+                                <img src="../images/projects/eDUvISOR/1d62ec677ab54826b88af0c4d7fdd3d0.jpg" alt="Portal de Padres" class="thumbnail">
+                            </div>
+                        </div>
+                        
+                        <div class="project-description">
+                            <h4>Descripción del Proyecto</h4>
+                            <p>eDUvISOR es un sistema integral desarrollado para el Ministerio de Educación que revoluciona la gestión académica y administrativa del sector educativo nacional. Esta plataforma robusta centraliza todos los procesos educativos, desde el registro estudiantil hasta la generación de reportes estadísticos, proporcionando una solución completa y escalable para el sistema educativo dominicano.</p>
+                            
+                            <h4>Módulos Principales de eDUvISOR</h4>
+                            <ul>
+                                <li>Sistema de Registro y Matrícula Estudiantil</li>
+                                <li>Portal Integrado para Docentes y Personal Administrativo</li>
+                                <li>Módulo de Calificaciones y Evaluación Académica</li>
+                                <li>Gestión Centralizada de Centros Educativos Nacionales</li>
+                                <li>Dashboard de Analytics y Estadísticas en Tiempo Real</li>
+                                <li>Integración con Sistemas Gubernamentales (JCE, TSS, DGII)</li>
+                                <li>Portal de Seguimiento para Padres y Representantes</li>
+                                <li>Sistema de Reportes Académicos y Administrativos</li>
+                                <li>Módulo de Planificación Curricular y Recursos</li>
+                                <li>Sistema de Certificaciones y Títulos Digitales</li>
+                            </ul>
+                            
+                            <h4>Tecnologías Utilizadas</h4>
+                            <div class="tech-stack">
+                                <span class="tech-item">Angular</span>
+                                <span class="tech-item">PHP Laravel</span>
+                                <span class="tech-item">MySQL</span>
+                                <span class="tech-item">Redis</span>
+                                <span class="tech-item">Docker</span>
+                                <span class="tech-item">AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Proyecto 3: Plataforma Inmobiliaria Sevane -->
+    <div class="modal fade" id="project-modal-3">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Sevane - Plataforma Inmobiliaria y Préstamos</h3>
+                    <button type="button" class="modal-close" data-dismiss="modal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="project-details">
+                        <div class="project-gallery">
+                            <div class="main-image">
+                                <img src="../images/projects/Sevane/sevane.jpg" alt="Dashboard Principal Sevane">
+                            </div>
+                            <div class="thumbnail-gallery">
+                                <img src="../images/projects/Sevane/sevane.jpg" alt="Dashboard Principal" class="thumbnail active">
+                                <img src="../images/projects/Sevane/022e3b1ddc2140578f4de3ddfc0badaa.jpg" alt="Búsqueda de Propiedades" class="thumbnail">
+                                <img src="../images/projects/Sevane/0cb5a4a168074b898f72d732760c0af6.jpg" alt="Listado de Inmuebles" class="thumbnail">
+                                <img src="../images/projects/Sevane/1c360fa5833b42d5bcdc46ccb85d3354.jpg" alt="Detalles de Propiedad" class="thumbnail">
+                                <img src="../images/projects/Sevane/1ce22cce7a094b2c8c755e6d94fd624d.jpg" alt="Calculadora Hipotecaria" class="thumbnail">
+                                <img src="../images/projects/Sevane/27cf94492c0a4eb2805af9922ad8c0bc.jpg" alt="Sistema de Préstamos" class="thumbnail">
+                                <img src="../images/projects/Sevane/2f0d0d7c56654d14a1ada3304c27445d.jpg" alt="Panel de Agentes" class="thumbnail">
+                                <img src="../images/projects/Sevane/2f9ef1d722404a018ddcd41fa911b0dd.jpg" alt="Gestión de Clientes" class="thumbnail">
+                            </div>
+                        </div>
+                        
+                        <div class="project-description">
+                            <h4>Descripción del Proyecto</h4>
+                            <p>Sevane es una plataforma inmobiliaria integral que revoluciona el mercado de bienes raíces combinando la búsqueda avanzada de propiedades con un sistema completo de préstamos hipotecarios. Esta solución digital conecta compradores, vendedores, agentes inmobiliarios y entidades financieras en un ecosistema único que facilita todo el proceso de compra-venta de inmuebles desde la búsqueda inicial hasta el cierre del financiamiento.</p>
+                            
+                            <h4>Módulos Principales de Sevane</h4>
+                            <ul>
+                                <li>Motor de Búsqueda Avanzada con Filtros Geográficos</li>
+                                <li>Sistema de Gestión de Propiedades con Tours Virtuales</li>
+                                <li>Calculadora Hipotecaria en Tiempo Real</li>
+                                <li>Plataforma de Solicitud y Aprobación de Préstamos</li>
+                                <li>Portal Especializado para Agentes Inmobiliarios</li>
+                                <li>CRM Integrado para Gestión de Clientes y Leads</li>
+                                <li>Sistema de Evaluación Automática de Propiedades</li>
+                                <li>Módulo de Documentación Legal y Contratos</li>
+                                <li>Dashboard Financiero con Analytics de Mercado</li>
+                                <li>Sistema de Notificaciones y Alertas de Mercado</li>
+                                <li>Integración con Entidades Bancarias y Crediticias</li>
+                                <li>Portal de Comparación de Tasas de Interés</li>
+                                <li>Sistema de Citas y Visitas Programadas</li>
+                                <li>Módulo de Reportes de Valor de Mercado (CMA)</li>
+                            </ul>
+                            
+                            <h4>Tecnologías Utilizadas</h4>
+                            <div class="tech-stack">
+                                <span class="tech-item">React.js</span>
+                                <span class="tech-item">Node.js</span>
+                                <span class="tech-item">Express.js</span>
+                                <span class="tech-item">MongoDB</span>
+                                <span class="tech-item">Stripe API</span>
+                                <span class="tech-item">Google Maps API</span>
+                                <span class="tech-item">Socket.io</span>
+                                <span class="tech-item">AWS S3</span>
+                                <span class="tech-item">JWT Auth</span>
+                                <span class="tech-item">Chart.js</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal Proyecto 5: Portafolio Empresarial -->
+    <div class="modal fade" id="project-modal-5">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Portafolio Empresarial</h3>
+                    <button type="button" class="modal-close" data-dismiss="modal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="project-details">
+                        <div class="project-gallery">
+                            <div class="main-image">
+                                <img src="../images/projects/portfolio.png" alt="Portafolio Empresarial">
+                            </div>
+                            <div class="thumbnail-gallery">
+                                <img src="../images/projects/portfolio2.png" alt="Sitio Corporativo" class="thumbnail active">
+                                <img src="../images/projects/portfolio3.png" alt="Panel Administrativo" class="thumbnail">
+                                <img src="../images/projects/portfolio5.png" alt="Panel Administrativo" class="thumbnail">
+                            </div>
+                        </div>
+                        
+                        <div class="project-description">
+                            <h4>Descripción del Proyecto</h4>
+                            <p>Sitio web corporativo con diseño elegante, optimizado para SEO y completamente responsive. Perfecto para empresas que buscan presencia digital profesional.</p>
+                            
+                            <h4>Características Principales</h4>
+                            <ul>
+                                <li>Diseño corporativo elegante</li>
+                                <li>Optimización SEO avanzada</li>
+                                <li>Panel de administración</li>
+                                <li>Formularios de contacto</li>
+                                <li>Integración con analytics</li>
+                                <li>Carga rápida optimizada</li>
+                            </ul>
+                            
+                            <h4>Tecnologías Utilizadas</h4>
+                            <div class="tech-stack">
+                                <span class="tech-item">Next.js</span>
+                                <span class="tech-item">Tailwind CSS</span>
+                                <span class="tech-item">TypeScript</span>
+                                <span class="tech-item">Vercel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal Proyecto 8: Plataforma Impuestos Internos -->
+    <div class="modal fade" id="project-modal-8">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Sistema de Facturación Empresarial</h3>
+                    <button type="button" class="modal-close" data-dismiss="modal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="project-details">
+                        <div class="project-gallery">
+                            <div class="main-image">
+                                <img src="../images/projects/Sistema-Facturacion/06966a62b225457d93b0f855d8a2bb14.jpg" alt="Dashboard Principal del Sistema de Facturación">
+                            </div>
+                            <div class="thumbnail-gallery">
+                                <img src="../images/projects/Sistema-Facturacion/06966a62b225457d93b0f855d8a2bb14.jpg" alt="Dashboard Principal" class="thumbnail active">
+                                <img src="../images/projects/Sistema-Facturacion/1105b3071b7e438d89d2e62f8e75016c.jpg" alt="Emisión de Facturas" class="thumbnail">
+                                <img src="../images/projects/Sistema-Facturacion/20851d9a16234e238973ac9e215641e0.jpg" alt="Gestión de Clientes" class="thumbnail">
+                                <img src="../images/projects/Sistema-Facturacion/292f798c4fb8406f9cbb7ab3472d19cc.jpg" alt="Control de Inventario" class="thumbnail">
+                                <img src="../images/projects/Sistema-Facturacion/2bd2c92f25da4e61913a3209de69a463.jpg" alt="Reportes Financieros" class="thumbnail">
+                                <img src="../images/projects/Sistema-Facturacion/5695f122373c403aa67fd642d35c1b63.jpg" alt="Gestión de Productos" class="thumbnail">
+                                <img src="../images/projects/Sistema-Facturacion/6d976452bf9c4ca5bc006479822d13da.jpg" alt="Configuración de Impuestos" class="thumbnail">
+                                <img src="../images/projects/Sistema-Facturacion/6ddf715911b74403942906e3fd7fbd6f.jpg" alt="Panel de Administración" class="thumbnail">
+                            </div>
+                        </div>
+                        
+                        <div class="project-description">
+                            <h4>Descripción del Proyecto</h4>
+                            <p>Sistema integral de facturación empresarial desarrollado para optimizar la gestión contable y administrativa de empresas. Esta plataforma robusta automatiza todo el proceso de facturación, desde la emisión hasta el seguimiento de pagos, proporcionando herramientas completas para la gestión financiera empresarial.</p>
+                            
+                            <h4>Módulos Principales del Sistema</h4>
+                            <ul>
+                                <li>Emisión Automática y Manual de Facturas</li>
+                                <li>Gestión Completa de Clientes y Proveedores</li>
+                                <li>Control de Inventario en Tiempo Real</li>
+                                <li>Módulo de Productos y Servicios</li>
+                                <li>Reportes Financieros y Contables Detallados</li>
+                                <li>Configuración Avanzada de Impuestos (ITBIS, ISR)</li>
+                                <li>Panel de Administración Multi-usuario</li>
+                                <li>Sistema de Notificaciones y Recordatorios</li>
+                                <li>Backup Automático y Seguridad de Datos</li>
+                                <li>Integración con Bancos y Pasarelas de Pago</li>
+                                <li>Generación de Comprobantes Fiscales NCF</li>
+                                <li>Dashboard con Analytics y Métricas de Negocio</li>
+                            </ul>
+                            
+                            <h4>Tecnologías Utilizadas</h4>
+                            <div class="tech-stack">
+                                <span class="tech-item">PHP 8.1</span>
+                                <span class="tech-item">Laravel 9</span>
+                                <span class="tech-item">MySQL 8.0</span>
+                                <span class="tech-item">Vue.js 3</span>
+                                <span class="tech-item">Bootstrap 5</span>
+                                <span class="tech-item">Chart.js</span>
+                                <span class="tech-item">PDF Generator</span>
+                                <span class="tech-item">REST API</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Proyecto 6: Plataforma de Donaciones -->
+    <div class="modal fade" id="project-modal-6">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Plataforma de Donaciones - DonateConnect</h3>
+                    <button type="button" class="modal-close" data-dismiss="modal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="project-details">
+                        <div class="project-gallery">
+                            <div class="main-image">
+                                <img src="../images/projects/Donate/42afd66bd5144452a23a0f1ae20b9e55.jpg" alt="Plataforma de Donaciones - Dashboard Principal">
+                            </div>
+                            <div class="thumbnail-gallery">
+                                <img src="../images/projects/Donate/42afd66bd5144452a23a0f1ae20b9e55.jpg" alt="Dashboard Principal" class="thumbnail active">
+                                <img src="../images/projects/Donate/3df22b1b5d66447992283142e2f6c5cb.jpg" alt="Campañas de Donación" class="thumbnail">
+                                <img src="../images/projects/Donate/4f343114ea7446aa86797b943c845df1.jpg" alt="Perfil de Organización" class="thumbnail">
+                                <img src="../images/projects/Donate/2ff290ad1831406abed8e0c39cb1b32c.jpg" alt="Sistema de Pagos" class="thumbnail">
+                                <img src="../images/projects/Donate/ac944b780e0246a9bdf7f580f1db73a9.jpg" alt="Reportes y Analytics" class="thumbnail">
+                            </div>
+                        </div>
+                        
+                        <div class="project-description">
+                            <h4>Descripción del Proyecto</h4>
+                            <p>DonateConnect es una plataforma integral de donaciones que conecta donantes con organizaciones benéficas de manera segura y transparente. El sistema permite crear y gestionar campañas de donación, procesar pagos seguros, generar reportes detallados y mantener total transparencia en el uso de los fondos.</p>
+                            
+                            <h4>Características Principales</h4>
+                            <ul>
+                                <li>Sistema de campañas de donación personalizables</li>
+                                <li>Procesamiento seguro de pagos con Stripe</li>
+                                <li>Dashboard para organizaciones benéficas</li>
+                                <li>Sistema de seguimiento de donaciones</li>
+                                <li>Reportes financieros en tiempo real</li>
+                                <li>Verificación de organizaciones</li>
+                                <li>Notificaciones automáticas por email</li>
+                                <li>Panel de administración avanzado</li>
+                                <li>Sistema de certificados de donación</li>
+                                <li>Analytics y métricas detalladas</li>
+                            </ul>
+                            
+                            <h4>Tecnologías Utilizadas</h4>
+                            <div class="tech-stack">
+                                <span class="tech-item">Next.js</span>
+                                <span class="tech-item">TypeScript</span>
+                                <span class="tech-item">Stripe API</span>
+                                <span class="tech-item">PostgreSQL</span>
+                                <span class="tech-item">Prisma ORM</span>
+                                <span class="tech-item">AWS S3</span>
+                                <span class="tech-item">SendGrid</span>
+                                <span class="tech-item">Chart.js</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="../images/logo/brightmatter-logo-white.png" alt="Brightmatter Lab">
+                        <h3>Brightmatter Lab</h3>
+                    </div>
+                    <p>Transformamos ideas en soluciones digitales profesionales que impulsan el crecimiento de tu negocio.</p>
+                    <p>Transformamos ideas en soluciones digitales profesionales que impulsan el crecimiento de tu negocio.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Navegación</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="projects.html">Proyectos</a></li>
+                        <li><a href="team.html">Equipo</a></li>
+                        <li><a href="services.html">Servicios</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Servicios</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html#web-development">Desarrollo Web</a></li>
+                        <li><a href="services.html#mobile-apps">Apps Móviles</a></li>
+                        <li><a href="services.html#platforms">Plataformas</a></li>
+                        <li><a href="services.html#maintenance">Mantenimiento</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:brightmatter.lab@gmail.com">brightmatter.lab@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/18096572939">+1 809-657-2939</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-instagram"></i>
+                            <a href="https://instagram.com/brightmatter.lab">@brightmatter.lab</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Brightmatter Lab. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Lightbox para ver imágenes en grande -->
+    <div id="image-lightbox" class="lightbox-overlay">
+        <div class="lightbox-container">
+            <button class="lightbox-close" id="lightbox-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="lightbox-content">
+                <img id="lightbox-image" src="" alt="">
+                <div class="lightbox-caption" id="lightbox-caption"></div>
+            </div>
+            <div class="lightbox-controls">
+                <button class="lightbox-nav lightbox-prev" id="lightbox-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="lightbox-nav lightbox-next" id="lightbox-next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/animations.js"></script>
+    <script src="../js/projects.js"></script>
+    <script src="../js/modal-carousel.js"></script>
+    <script src="../js/lightbox.js"></script>
+
+</body>
+</html>
