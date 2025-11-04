@@ -8,21 +8,9 @@
     --color-accent: 16 185 129;
     --color-ink: 15 23 42;
   }
-  
-
-   .dark {
-    --color-primary: 167 139 250; /* primary-400 más claro */
-    --color-accent: 52 211 153; /* accent-400 más claro */
-    --color-ink: 243 244 246; /* gray-100 */
-  } 
-
-
- * {
-  /* @apply border; */
-}
 
   body {
-    @apply bg-bg-light text-ink;
+    @apply bg-white text-gray-900;
     font-feature-settings: 'rlig' 1, 'calt' 1;
   }
 
@@ -54,34 +42,33 @@
     height: 10px;
   }
 
- ::-webkit-scrollbar-track {
-    @apply bg-gray-100 dark:bg-gray-800;
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-primary-400 dark:bg-primary-600 rounded-full;
+    @apply bg-primary-400 rounded-full;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary-600 dark:bg-primary-500;
+    @apply bg-primary-600;
   }
 
   /* Focus styles */
   .focus-ring {
-    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-900;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2;
   }
 
   /* Gradient text */
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-600 via-primary-500 to-accent-500 dark:from-primary-400 dark:via-primary-300 dark:to-accent-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary-600 via-primary-500 to-accent-500 bg-clip-text text-transparent;
   }
 
   /* Glass morphism */
   .glass {
-    @apply backdrop-blur-md bg-white/80 dark:bg-gray-900/80 border border-white/20 dark:border-gray-700/20;
+    @apply backdrop-blur-md bg-white/80 border border-white/20;
   }
 }
-
 
 @layer utilities {
   /* Animation utilities */
