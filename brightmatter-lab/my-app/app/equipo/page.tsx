@@ -89,16 +89,16 @@ export default function EquipoPage() {
 
                   {/* Social Links */}
                   <div className="flex gap-3 justify-center">
-                    {member.social.linkedin && (
-                      <motion.a
-                        href={member.social.linkedin}
-                        whileHover={{ scale: 1.2, y: -4 }}
-                        className="w-10 h-10 rounded-full bg-primary-100 hover:bg-primary-200 flex items-center justify-center transition-colors"
-                        aria-label="LinkedIn"
-                      >
-                        <Linkedin className="w-5 h-5 text-primary-600" />
-                      </motion.a>
-                    )}
+                    {'linkedin' in member.social && member.social.linkedin && (
+  <motion.a
+    href={member.social.linkedin}
+    whileHover={{ scale: 1.2, y: -4 }}
+    className="w-10 h-10 rounded-full bg-primary-100 hover:bg-primary-200 flex items-center justify-center transition-colors"
+    aria-label="LinkedIn"
+  >
+    <Linkedin className="w-5 h-5 text-primary-600" />
+  </motion.a>
+)}
                     {member.social.github && (
                       <motion.a
                         href={member.social.github}
