@@ -14,19 +14,19 @@ const projects = [
     title: 'E-commerce Avanzado',
     description: 'Plataforma completa de comercio electrónico con gestión de inventario y pagos integrados.',
     tags: ['React', 'Strapi', 'Azure'],
-    image: '/projects/ecommerce.jpg',
+    image: '/ecommerce.jpg',
   },
   {
     title: 'Plataforma Educativa',
     description: 'Sistema integral para gestión académica y administrativa del sector educativo.',
     tags: ['Node.js', 'Mongodb', 'Vue'],
-    image: '/projects/education.jpg',
+    image: '/education.jpg',
   },
   {
     title: 'Plataforma Inmobiliaria',
     description: 'Sistema completo de préstamos y búsqueda avanzada de propiedades.',
     tags: ['React', 'Node.js', 'Mongodb'],
-    image: '/projects/realestate.jpg',
+    image: '/realestate.jpg',
   },
 ]
 
