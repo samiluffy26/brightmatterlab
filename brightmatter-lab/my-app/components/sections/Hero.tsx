@@ -13,12 +13,12 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-primary-600/10 via-primary-400/5 to-accent-500/10 animate-gradient bg-300" />
       
       {/* Morphing blob */}
-      <div className="absolute top-1/4 right-1/4 opacity-20">
+      <div className="absolute top-1/4 right-1/4 opacity-20 pointer-events-none">
         <MorphingBlob />
       </div>
 
       {/* Particles background */}
-      <div className="absolute inset-0 opacity-30">
+      <div className="absolute inset-0 opacity-30 pointer-events-none">
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
@@ -40,36 +40,39 @@ export default function Hero() {
         ))}
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 z-10">
+      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-32 z-10">
         <motion.div
           variants={heroVariants}
           initial="hidden"
           animate="visible"
-          className="grid lg:grid-cols-2 gap-12 items-center"
+          className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center"
         >
           {/* Content */}
-          <div className="space-y-8">
-            <motion.div variants={heroChildVariants} className="inline-flex items-center gap-2 bg-primary-100 px-4 py-2 rounded-full">
-              <Sparkles className="w-4 h-4 text-primary-600" />
-              <span className="text-sm font-semibold text-primary-700">
+          <div className="space-y-6 sm:space-y-8">
+            <motion.div 
+              variants={heroChildVariants} 
+              className="inline-flex items-center gap-2 bg-primary-100 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full"
+            >
+              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-primary-600 flex-shrink-0" />
+              <span className="text-xs sm:text-sm font-semibold text-primary-700 whitespace-nowrap">
                 Innovación Digital
               </span>
             </motion.div>
 
             <motion.h1
               variants={heroChildVariants}
-              className="text-5xl md:text-6xl lg:text-7xl font-display font-extrabold leading-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold leading-tight"
             >
               <span className="block text-ink">Transformamos</span>
               <span className="block text-ink">Ideas en</span>
-              <span className="block gradient-text">
+              <span className="block gradient-text break-words">
                 Soluciones Digitales
               </span>
             </motion.h1>
 
             <motion.p
               variants={heroChildVariants}
-              className="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-2xl"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl"
             >
               Especialistas en desarrollo de software profesional. 
               Creamos{' '}
@@ -79,11 +82,23 @@ export default function Hero() {
               que impulsan el crecimiento de tu negocio.
             </motion.p>
 
-            <motion.div variants={heroChildVariants} className="flex flex-col sm:flex-row gap-4">
-              <Button variant="primary" size="lg" icon={<ArrowRight className="w-5 h-5" />}>
+            <motion.div 
+              variants={heroChildVariants} 
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4"
+            >
+              <Button 
+                variant="primary" 
+                size="lg" 
+                icon={<ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />}
+                className="w-full sm:w-auto"
+              >
                 Ver Proyectos
               </Button>
-              <Button variant="secondary" size="lg">
+              <Button 
+                variant="secondary" 
+                size="lg"
+                className="w-full sm:w-auto"
+              >
                 Solicitar Servicio
               </Button>
             </motion.div>
@@ -91,7 +106,7 @@ export default function Hero() {
             {/* Stats */}
             <motion.div
               variants={heroChildVariants}
-              className="grid grid-cols-3 gap-6 pt-8 border-t border-gray-200"
+              className="grid grid-cols-3 gap-4 sm:gap-6 pt-6 sm:pt-8 border-t border-gray-200"
             >
               {[
                 { value: '10+', label: 'Proyectos' },
@@ -99,22 +114,21 @@ export default function Hero() {
                 { value: '24/7', label: 'Soporte' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <p className="text-3xl font-display font-bold gradient-text">
+                  <p className="text-2xl sm:text-3xl font-display font-bold gradient-text">
                     {stat.value}
                   </p>
-                  <p className="text-sm text-gray-600 mt-1">{stat.label}</p>
+                  <p className="text-xs sm:text-sm text-gray-600 mt-1">{stat.label}</p>
                 </div>
               ))}
             </motion.div>
           </div>
 
-          {/* Animated illustration placeholder */}
+          {/* Animated illustration */}
           <motion.div
             variants={heroChildVariants}
-            className="relative h-96 lg:h-[600px]"
+            className="relative h-64 sm:h-80 md:h-96 lg:h-[600px] mt-8 lg:mt-0"
           >
-            <div className="absolute inset-0 flex items-center justify-center">
-              {/* Replace with Lottie animation */}
+            <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
               <div className="relative w-full h-full">
                 <motion.div
                   animate={{
@@ -137,10 +151,10 @@ export default function Hero() {
                     repeat: Infinity,
                     ease: 'easeInOut',
                   }}
-                  className="relative w-full h-full flex items-center justify-center"
+                  className="relative w-full h-full flex items-center justify-center p-4"
                 >
                   {/* Tech icons grid */}
-                  <div className="grid grid-cols-3 gap-8">
+                  <div className="grid grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-md mx-auto">
                     {['Code', 'Mobile', 'Cloud', 'Database', 'AI', 'Security'].map((tech, i) => (
                       <motion.div
                         key={tech}
@@ -152,9 +166,9 @@ export default function Hero() {
                           type: 'spring',
                         }}
                         whileHover={{ scale: 1.2, rotate: 360 }}
-                        className="w-20 h-20 bg-white rounded-2xl shadow-xl flex items-center justify-center border border-gradient-animated"
+                        className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white rounded-xl sm:rounded-2xl shadow-xl flex items-center justify-center border border-gradient-animated"
                       >
-                        <span className="text-2xl font-bold gradient-text">
+                        <span className="text-lg sm:text-xl lg:text-2xl font-bold gradient-text">
                           {tech[0]}
                         </span>
                       </motion.div>
@@ -172,18 +186,18 @@ export default function Hero() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.5, duration: 0.8 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-sm text-gray-500 font-medium">Scroll para explorar</span>
+        <span className="text-xs sm:text-sm text-gray-500 font-medium">Scroll para explorar</span>
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-primary-400 rounded-full flex justify-center pt-2"
+          className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-primary-400 rounded-full flex justify-center pt-1.5 sm:pt-2"
         >
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-1.5 h-3 bg-primary-500 rounded-full"
+            className="w-1 h-2 sm:w-1.5 sm:h-3 bg-primary-500 rounded-full"
           />
         </motion.div>
       </motion.div>

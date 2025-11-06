@@ -272,8 +272,8 @@ export const TEAM_MEMBERS = [
     bio: 'Más de 4 años de experiencia en desarrollo web y liderazgo de equipos técnicos.',
     image: '/images/team/samuel.jpg',
     social: {
-      linkedin: '#',
-      github: '#',
+      linkedin: 'https://www.linkedin.com/in/samuelguance/',
+      github: 'https://github.com/samiluffy26',
       twitter: '#',
     },
     skills: ['React', 'Node.js', 'Azure', 'ASP.NET', '.NET', 'BLAZOR WEBASSEMBLY/SERVER', 'MongoDb', 'SQL'],
